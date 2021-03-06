@@ -15,22 +15,36 @@ if (request.getParameter("action") != null)
  		 session.setAttribute("statusMsg", stsMsg);
  	 }
 	//call the update function
-	 else if (request.getParameter("action").equalsIgnoreCase("update"))
+	  else if (request.getParameter("action").equalsIgnoreCase("update"))
 	 {
-		System.out.println("newUpdate");
+		//System.out.println("newUpdate");
 	    String stsMsg = itemObj.updateItem(Integer.parseInt(request.getParameter("itemID")),request.getParameter("itemCode"),request.getParameter("itemName"),request.getParameter("itemPrice"),request.getParameter("itemDesc"));
 	 	session.setAttribute("statusMsg", stsMsg);
 	 }
 	//call the delete function
-	 else if(request.getParameter("action").equalsIgnoreCase("delete"))
+	else if(request.getParameter("action").equalsIgnoreCase("delete"))
 	 {
-		System.out.println("newDelete");
+		//System.out.println("newDelete");
 	 	String stsMsg = itemObj.deleteItem(Integer.parseInt(request.getParameter("itemID")));
 	    session.setAttribute("statusMsg", stsMsg);
 	 }
- 
 
-}	
+}
+/*if (request.getParameter("itemID") != null)
+{
+Item itemObj = new Item();
+//String stsMsg = itemObj.deleteItem(Integer.parseInt(request.getParameter("itemID")));
+String stsMsg = itemObj.updateItem(Integer.parseInt(request.getParameter("itemID")),request.getParameter("itemCode"),request.getParameter("itemName"),request.getParameter("itemPrice"),request.getParameter("itemDesc"));
+session.setAttribute("statusMsg", stsMsg);
+}
+if (request.getParameter("itemID") != null)
+{
+Item itemObj = new Item();
+String stsMsg = itemObj.deleteItem(Integer.parseInt(request.getParameter("itemID")));
+session.setAttribute("statusMsg", stsMsg);
+}*/
+
+
  %>
 
 <!DOCTYPE html>
